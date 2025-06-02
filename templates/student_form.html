@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4 text-center">{{ 'Edit Student' if edit else 'Add Student' }}</h2>
+<form method="POST" class="mx-auto" style="max-width: 400px;">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        <label>{{ form.name.label }}</label>
+        {{ form.name(class="form-control", required=True, pattern="[A-Za-z ]+", title="Only letters and spaces") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.email.label }}</label>
+        {{ form.email(class="form-control", required=True, type="email") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.age.label }}</label>
+        {{ form.age(class="form-control", required=True, pattern="\\d+", title="Numbers only") }}
+    </div>
+    <button type="submit" class="btn btn-primary w-100">{{ 'Update' if edit else 'Add' }}</button>
+</form>
+{% endblock %}

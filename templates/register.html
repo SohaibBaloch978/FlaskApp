@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4 text-center">Register</h2>
+<form method="POST" class="mx-auto" style="max-width: 400px;">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        <label>{{ form.name.label }}</label>
+        {{ form.name(class="form-control", required=True, pattern="[A-Za-z ]+", title="Name should only contain letters and spaces") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.email.label }}</label>
+        {{ form.email(class="form-control", required=True, type="email") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.phone.label }}</label>
+        {{ form.phone(class="form-control", required=True, pattern="\\d+", title="Numbers only") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.password.label }}</label>
+        {{ form.password(class="form-control", required=True, type="password") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.confirm_password.label }}</label>
+        {{ form.confirm_password(class="form-control", required=True, type="password") }}
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Register</button>
+</form>
+{% endblock %}
+

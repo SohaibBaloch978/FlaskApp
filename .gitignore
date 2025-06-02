@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+venv/
+
+# Flask/SQLite
+instance/
+site.db
+*.sqlite3
+
+# VSCode/Visual Studio
+.vscode/
+.vs/

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4 text-center">Contact Details</h2>
+<form method="POST" class="mx-auto" style="max-width: 600px;">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        <label>{{ form.name.label }}</label>
+        {{ form.name(class="form-control", required=True, pattern="[A-Za-z ]+", title="Only letters and spaces") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.email.label }}</label>
+        {{ form.email(class="form-control", required=True, type="email") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.phone.label }}</label>
+        {{ form.phone(class="form-control", required=True, pattern="\\d+", title="Numbers only") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.address.label }}</label>
+        {{ form.address(class="form-control", required=True) }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.website.label }}</label>
+        {{ form.website(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        <label>{{ form.message.label }}</label>
+        {{ form.message(class="form-control", required=True) }}
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+</form>
+{% endblock %}
