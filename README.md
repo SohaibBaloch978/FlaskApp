@@ -10,7 +10,7 @@
 
 ### 1. Clone the repo
 ```sh
-git clone <enter-repo-url>
+git clone https://github.com/SohaibBaloch978/FlaskApp
 cd Flask_App
 ```
 
